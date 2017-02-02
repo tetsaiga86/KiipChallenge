@@ -11,14 +11,12 @@ import kennedy.kyle.r.kiipmobilechallengelibrary.HackerNewsItem;
 import kennedy.kyle.r.kiipmobilechallengelibrary.R;
 
 public class ListAdapter extends BaseAdapter {
-    private Context mContext;
     private LayoutInflater mInflater;
     private ArrayList<HackerNewsItem> mDataArrayList;
 
     public ListAdapter(Context context, ArrayList<HackerNewsItem> items){
-        mContext = context;
         mDataArrayList = items;
-        mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
