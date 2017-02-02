@@ -62,7 +62,6 @@ public class HackerNews {
     }
 
     public void showHackerNews(){
-
         Integer[] topIds = new Integer[20];
 
         try {
