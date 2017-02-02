@@ -10,11 +10,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 
 import kennedy.kyle.r.kiipmobilechallengelibrary.Dialogs.HackerNewsDialog;
-import kennedy.kyle.r.kiipmobilechallengelibrary.adapters.ApiClient;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -22,11 +20,8 @@ import okhttp3.Response;
 public class HackerNews {
     public static String HACKER_NEWS_INDEX_URL = "https://hacker-news.firebaseio.com/v0/topstories.json";
     public static String HACKER_NEWS_ITEM_URL = "https://hacker-news.firebaseio.com/v0/item/:id.json";
-    private ArrayList<HackerNewsItem> mItems = new ArrayList<>();
     private Activity mActivity;
-    private ApiClient mApiClient;
     private String mJsonData;
-    private JSONArray mStoryIdArray;
 
 
     public void initSDK(Context context){
@@ -64,19 +59,6 @@ public class HackerNews {
             }
         }.execute(HACKER_NEWS_INDEX_URL);
 
-//        mApiClient = new ApiClient(mActivity,"https://hacker-news.firebaseio.com/v0/topstories.json");
-//        Log.i("inside initSDK:", mApiClient.getUrlJsonString()+"");
-//        mJsonData = mApiClient.getUrlJsonString();
-//        try {
-//            mStoryIdArray = new JSONArray(mJsonData);
-//            for (int i = 0; i<20; i++){
-//                mApiClient = new ApiClient("https://hacker-news.firebaseio.com/v0/item/"+mStoryIdArray.get(i).toString()+".json");
-//                mItems.add(new HackerNewsItem(new JSONObject(mApiClient.getUrlJsonString())));
-////                Log.i("for loop ", "initSDK: "+mApiClient.getUrlJsonString());
-//            }
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
     }
 
     public void showHackerNews(){
@@ -114,9 +96,6 @@ public class HackerNews {
                         e.printStackTrace();
                     }
                 }
-
-                //
-
                 return responses;
             }
 
