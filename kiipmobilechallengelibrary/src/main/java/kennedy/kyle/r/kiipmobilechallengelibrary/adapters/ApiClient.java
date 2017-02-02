@@ -14,18 +14,18 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class ApiClient {
-    private Context mContext;
+//    private Context mContext;
     private String mUrl;
 
-    public ApiClient(Context context, String url){
-        mContext = context;
+    public ApiClient(String url){
+//        mContext = context;
         mUrl = url;
     }
 
     public String getUrlJsonString(){
-        if (!ensureNetworkAvailable()) {
-            return null;
-        }
+//        if (!ensureNetworkAvailable()) {
+//            return null;
+//        }
         final String[] bodyString = {null};
         OkHttpClient client = new OkHttpClient();
 
@@ -52,23 +52,23 @@ public class ApiClient {
 
     }
 
-    private boolean ensureNetworkAvailable() {
-        if (!isNetworkAvailable(mContext)) {
-            Toast.makeText(mContext, "A Network Problem Occurred",
-                    Toast.LENGTH_LONG).show();
-            return false;
-        }
-        return true;
-    }
+//    private boolean ensureNetworkAvailable() {
+//        if (!isNetworkAvailable(mContext)) {
+//            Toast.makeText(, "A Network Problem Occurred",
+//                    Toast.LENGTH_LONG).show();
+//            return false;
+//        }
+//        return true;
+//    }
 
-    private boolean isNetworkAvailable(Context context) {
-        ConnectivityManager manager = (ConnectivityManager)
-                context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
-        boolean isAvailable = false;
-        if (networkInfo != null && networkInfo.isConnected()) {
-            isAvailable = true;
-        }
-        return isAvailable;
-    }
+//    private boolean isNetworkAvailable(Context context) {
+//        ConnectivityManager manager = (ConnectivityManager)
+//                context.getSystemService(Context.CONNECTIVITY_SERVICE);
+//        NetworkInfo networkInfo = manager.getActiveNetworkInfo();
+//        boolean isAvailable = false;
+//        if (networkInfo != null && networkInfo.isConnected()) {
+//            isAvailable = true;
+//        }
+//        return isAvailable;
+//    }
 }
